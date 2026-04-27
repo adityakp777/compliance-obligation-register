@@ -1,0 +1,3 @@
+ai:
+  service:
+    url: ${AI_SERVICE_URL:http://localhost:5001}
