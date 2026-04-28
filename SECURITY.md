@@ -254,15 +254,17 @@ during the live demo, all AI features fail publicly.
 | Prompt injection in description field | Embedded instruction string | ✅ PASS | Returns 405 - sanitisation middleware ready for when route is implemented |
 | Rate limit trigger | 35 requests in under 1 min | ✅ PASS | 429 returned after 30 requests with retry_after header |
 
-### Week 2 Sign-off (Day 10 — Fri 1 May 2026)
+### Week 2 — ZAP Baseline Scan (Day 7 — Tue 28 Apr 2026)
 
-| Test | Method | Result | Notes |
-|------|--------|--------|-------|
-| JWT enforcement on all endpoints | VIEWER token on DELETE route | — | — |
-| Role boundary: MANAGER cannot delete | MANAGER JWT on DELETE | — | — |
-| Rate limiting verified globally | 31 req/min from single IP | — | — |
-| PII audit of prompt logs | Review Flask log output | — | — |
-| ZAP baseline scan | OWASP ZAP 2.x baseline | — | — |
+| ID | Finding | Severity | Status |
+|----|---------|----------|--------|
+| F-001 | Content Security Policy (CSP) Header Not Set | Medium | To be fixed Day 8 |
+| F-002 | HTTP Only Site | Medium | To be fixed Day 8 |
+| F-003 | Server Leaks Version Information via Server HTTP Header | Low | To be fixed Day 8 |
+| F-004 | X-Content-Type-Options Header Missing | Low | To be fixed Day 8 |
+
+**Summary:** 0 Critical | 0 High | 2 Medium | 2 Low
+**Action:** All Medium findings will be fixed on Day 8 via flask-talisman security headers.
 
 *(Results and notes to be filled in during each week)*
 
@@ -302,4 +304,4 @@ during the live demo, all AI features fail publicly.
 ---
 
 *Tool-11 — Compliance Obligation Register | Security Document v0.2 (Day 2 draft)*
-*Last updated: 23 April 2026*
+*Last updated: 24 April 2026*
