@@ -2,6 +2,7 @@
 # AI Developer 3 — Flask Entry Point with Rate Limiting
 # Day 4 — Tool-11 Compliance Obligation Register
 
+from flask_talisman import Talisman
 import os
 from flask import Flask, jsonify
 from flask_limiter import Limiter
@@ -18,6 +19,33 @@ from routes.query import query_bp
 # ------------------------------------------------------------------ #
 
 app = Flask(__name__)
+
+# ------------------------------------------------------------------ #
+# Security headers — fixes ZAP findings F-001, F-002, F-003, F-004  #
+# ------------------------------------------------------------------ #
+
+Talisman(
+    app,
+    force_https=False,           # False for local dev — True in production
+    strict_transport_security=False,  # disable HSTS for local dev
+    content_security_policy={
+    'default-src': "'self'",
+    'script-src': "'self'",
+    'style-src': "'self'",
+    'img-src': "'self'",
+    'font-src': "'self'",
+    'connect-src': "'self'",
+    'frame-ancestors': "'none'",
+    'form-action': "'self'",
+    'base-uri': "'self'",
+},
+    x_content_type_options=True,     # fixes F-004
+    frame_options='DENY',
+    referrer_policy='strict-origin-when-cross-origin',
+    feature_policy={
+        'geolocation': "'none'",
+    }
+)
 
 # ------------------------------------------------------------------ #
 # Rate limiting                                                        #

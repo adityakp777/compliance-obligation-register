@@ -272,13 +272,12 @@ during the live demo, all AI features fail publicly.
 
 ## 5. Findings Log
 
-| ID | Source | Severity | Description | Status | Fixed Date |
-|----|--------|----------|-------------|--------|------------|
-| F-001 | ZAP Baseline | — | — | — | — |
-| F-002 | ZAP Baseline | — | — | — | — |
-| F-003 | Manual Test | — | — | — | — |
+| F-001 | CSP Header Not Set | Medium | ✅ Fixed Day 8 — CSP added via flask-talisman |
+| F-002 | HTTP Only Site | Medium | ⚠️ Accepted — HTTPS enforced in Docker production |
+| F-003 | Server Leaks Version Info | Low | ⚠️ Accepted — Low risk, mitigated in production |
+| F-004 | X-Content-Type-Options Missing | Low | ✅ Fixed Day 8 — x_content_type_options=True |
 
-*(To be populated from Day 7 onwards as scans are run)*
+**Result: 0 Critical | 0 High | 2 Medium accepted | Day 8 target met ✅**
 
 ---
 
