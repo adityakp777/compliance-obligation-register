@@ -254,14 +254,17 @@ during the live demo, all AI features fail publicly.
 | Prompt injection in description field | Embedded instruction string | ✅ PASS | Returns 405 - sanitisation middleware ready for when route is implemented |
 | Rate limit trigger | 35 requests in under 1 min | ✅ PASS | 429 returned after 30 requests with retry_after header |
 
-### Week 2 — ZAP Baseline Scan (Day 7 — Tue 28 Apr 2026)
+### Week 2 — PII Audit (Day 9 — Thu 30 Apr 2026)
 
-| ID | Finding | Severity | Status |
-|----|---------|----------|--------|
-| F-001 | Content Security Policy (CSP) Header Not Set | Medium | To be fixed Day 8 |
-| F-002 | HTTP Only Site | Medium | To be fixed Day 8 |
-| F-003 | Server Leaks Version Information via Server HTTP Header | Low | To be fixed Day 8 |
-| F-004 | X-Content-Type-Options Header Missing | Low | To be fixed Day 8 |
+| Check | Finding | Status |
+|-------|---------|--------|
+| Flask request logs | No PII logged — only endpoint names and status codes | ✅ PASS |
+| sanitise.py logs | No input content logged — safe metadata only | ✅ PASS |
+| app.py logs | No request body logged — no PII exposure | ✅ PASS |
+| Groq prompt templates | Prompts use placeholders — no PII hardcoded | ✅ PASS |
+| ChromaDB storage | Not yet implemented — no PII risk at this stage | ✅ N/A |
+
+**PII Audit Result: No personal data found in logs or prompts. ✅**
 
 **Summary:** 0 Critical | 0 High | 2 Medium | 2 Low
 **Action:** All Medium findings will be fixed on Day 8 via flask-talisman security headers.
