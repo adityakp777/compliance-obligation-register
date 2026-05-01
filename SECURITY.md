@@ -271,6 +271,16 @@ during the live demo, all AI features fail publicly.
 **Summary:** 0 Critical | 0 High | 2 Medium | 2 Low
 **Action:** All Medium findings will be fixed on Day 8 via flask-talisman security headers.
 
+### Week 3 — Full ZAP Active Scan (Day 11 — Mon 4 May 2026)
+
+| Finding | Severity | Status |
+|---------|----------|--------|
+| HTTP Only Site | Low | ⚠️ Accepted — HTTPS enforced in Docker production |
+| Server Leaks Version Info | Low | ⚠️ Accepted — Low risk, dev server only |
+
+**Result: 0 Critical | 0 High | 0 Medium | 2 Low accepted ✅**
+**Day 11 target met — all Critical and High findings fixed ✅**
+
 *(Results and notes to be filled in during each week)*
 
 ---
