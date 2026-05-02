@@ -19,7 +19,11 @@ from routes.query import query_bp
 # ------------------------------------------------------------------ #
 
 app = Flask(__name__)
-
+# Remove server header to prevent version disclosure — fixes ZAP finding
+@app.after_request
+def remove_server_header(response):
+    response.headers['Server'] = 'Tool-11-AI-Service'
+    return response
 # ------------------------------------------------------------------ #
 # Security headers — fixes ZAP findings F-001, F-002, F-003, F-004  #
 # ------------------------------------------------------------------ #
