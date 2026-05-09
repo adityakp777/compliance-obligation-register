@@ -369,4 +369,4 @@ Complete loss of AI functionality for all users during the attack window. Groq A
 ---
 
 *Tool-11 — Compliance Obligation Register | Security Document v1.0 (Final)*
-*Last updated: 5 May 2026 | Final version: Day 15*
+*Last updated: 7 May 2026 | Sprint: 14 April – 9 May 2026*
