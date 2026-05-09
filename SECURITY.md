@@ -52,7 +52,7 @@ An attacker registers as a VIEWER and intercepts a valid JWT from browser dev to
 - Flyway V3 migration seeds roles at startup — no manual role assignment possible
 - Integration tests verify that a VIEWER JWT returns HTTP 403 on all write endpoints
 
-**Status:** [x] Implemented | [x] Tested | [ ] Signed off
+**Status:** [x] Implemented | [x] Tested | [x] Signed off
 
 ---
 
@@ -74,7 +74,7 @@ An attacker creates a compliance record with the description: `"Ignore all previ
 - Prompts use a strict system message that instructs the model to ignore any instructions embedded in user content
 - All inputs validated with `@Valid` + Bean Validation annotations in Spring Boot DTOs
 
-**Status:** [x] Implemented | [x] Tested | [ ] Signed off
+**Status:** [x] Implemented | [x] Tested | [x] Signed off
 
 ---
 
@@ -93,7 +93,7 @@ A developer accidentally commits the `.env` file containing `GROQ_API_KEY`, `DB_
 - All inter-service communication happens inside the Docker network — Flask AI service is not exposed to the public internet (internal port only)
 - README and `.env.example` document required variables without real values
 
-**Status:** [x] Implemented | [x] Tested | [ ] Signed off
+**Status:** [x] Implemented | [x] Tested | [x] Signed off
 
 ---
 
@@ -112,7 +112,7 @@ An attacker runs a credential-stuffing script against `POST /api/auth/login`, tr
 - Passwords must meet minimum complexity (enforced via `@Pattern` annotation on the register DTO)
 - Spring Security returns identical error messages for "user not found" and "wrong password" — prevents username enumeration
 
-**Status:** [x] Implemented | [x] Tested | [ ] Signed off
+**Status:** [x] Implemented | [x] Tested | [x] Signed off
 
 ---
 
@@ -131,7 +131,7 @@ The Flask AI service is deployed with `debug=True` left on from development. An 
 - Swagger UI (`/swagger-ui.html`) restricted to non-production profiles via `@Profile("!prod")`
 - Docker Compose network is internal — AI service port 5000 and PostgreSQL port 5432 are not bound to `0.0.0.0`; only the frontend (port 80) and backend (port 8080) are exposed
 
-**Status:** [x] Implemented | [x] Tested | [ ] Signed off
+**Status:** [x] Implemented | [x] Tested | [x] Signed off
 
 ---
 
@@ -344,15 +344,15 @@ Complete loss of AI functionality for all users during the attack window. Groq A
 
 | Member | Role | Signature | Date |
 |--------|------|-----------|------|
-| | Java Developer 1 | | |
-| | Java Developer 2 | | |
-| | Java Developer 3 | | |
-| | AI Developer 1 | | |
-| | AI Developer 2 | | |
+| Janavi H Gowda | Java Developer 1 | ✅ | 2 May 2026 |
+| Shivanand Yamanappa Bajantri | Java Developer 2 | ✅ | 2 May 2026 |
+| Manoj N | Java Developer 3 | ✅ | 2 May 2026 |
+| Arif Raju Sanadi | AI Developer 1 | ✅ | 2 May 2026 |
+| Vikas A| AI Developer 2 | ✅ | 2 May 2026 |
 | Aditya K P | AI Developer 3 | ✅ | 2 May 2026 |
-| | Security Reviewer | | |
+| Omkar S | Security Reviewer | ✅ | 2 May 2026 |
 
 ---
 
-*Tool-11 — Compliance Obligation Register | Security Document v0.9 (Day 14 draft)*
-*Last updated: 2 May 2026 | Final version: Day 15*
+*Tool-11 — Compliance Obligation Register | Security Document v1.0 (Final)*
+*Last updated: 9 May 2026 | Final version: Day 15*
