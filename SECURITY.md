@@ -340,6 +340,20 @@ Complete loss of AI functionality for all users during the attack window. Groq A
 | R-002 | Server Leaks Version on unhandled routes | Low | Werkzeug handles unknown routes before our after_request hook fires. Low risk — no sensitive data exposed. Mitigated in production via Docker. |
 | R-003 | JWT tests not verified locally | Medium | Java backend not running locally — @PreAuthorize annotations verified in code review. To be tested on Demo Day with full Docker stack. |
 
+## 7. Demo Day Security Notes
+
+**Live demonstrations planned:**
+- Show 401 — curl without JWT token against Java backend
+- Show 400 — curl with prompt injection string
+- Show 429 — rate limit trigger after 30 requests
+- Reference SECURITY.md findings log live on screen
+
+**Talking points (60 seconds):**
+- JWT enforced via Spring Security @PreAuthorize
+- Rate limiting — 30 req/min global, 10 req/min on /generate-report
+- Input sanitisation — HTML stripping + prompt injection detection
+- OWASP ZAP — 0 Critical, 0 High in final scan
+
 ### Team Sign-off
 
 | Member | Role | Signature | Date |
